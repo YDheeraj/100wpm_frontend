@@ -1,0 +1,12 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.grad-dark{
+    height: 60vh;
+    width: 100%;
+    background-image: linear-gradient(to bottom, #050505, #141a20);
+}
+
