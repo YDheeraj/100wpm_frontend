@@ -5,6 +5,8 @@
     align-items: center;
 }
 
+
+
 .inner-container{
     width: 100%;
     position: relative;
@@ -32,10 +34,10 @@
 
 
 .grad-dark{
-    height: 60vh;
+    height: 72vh;
     width: 100%;
     /* background-image: linear-gradient(#414141,rgb(0, 0, 0)); */
-    background-image: linear-gradient(to bottom, #050505, #141a20);
+    background-image: linear-gradient(to bottom, #000000, #141a20);
     /* background-color: #050505; */
 }
 
@@ -109,4 +111,59 @@ text-transform: uppercase;
 
 .btn:hover{
     background-color: rgb(165, 165, 165);
+}
+
+ /* //////////////////////////-------------StartTyping-Text design----------/////////////////////////////// */
+
+.startType-main-box{
+    width: 80vw;
+    height: 60vh;
+    position: relative;
+    background-color: #0f0f0f;
+    margin: auto;
+    border-radius: 25px;
+    border: 5px solid rgb(99, 99, 99);
+    text-align: center;
+
+}
+
+
+.startType-logo-box-outer{
+    width: 130px;
+    height: 130px;
+    position: relative;
+    background-color: #333;
+    border-radius: 50%;
+    font-size: 70px;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+  
+}
+
+.startType-main-box h1{
+    color: white;
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 400;
+    padding-bottom: 10px;
+    width: auto;
+  
+}
+
+
+.startType-logo{
+color: white;
+position: absolute;
+left: 26%;
+top: 21%;
+rotate: -45deg;
+}
+
+.bottom-container{
+    position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%);
+
 }

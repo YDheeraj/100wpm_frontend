@@ -2,6 +2,8 @@
 import './speed.css'
 import React ,{useEffect,useRef,useState} from 'react'
 import {SlSpeedometer} from "react-icons/sl";
+import { setWpm } from '../../actions';
+import { useDispatch } from 'react-redux';
 
 const Speed = ({symbol,start}) => {
   const [sec,setSec]=useState(0);
@@ -79,6 +81,11 @@ useEffect(()=>{
     speedref.current.style.transform=`rotate(${updatedSpeed}deg)`;
     needleref.current.style.transform=`rotate(${needledeg}deg)`;
 },[wpm])
+
+const sendWpm=useDispatch();
+sendWpm(setWpm(Math.round(wpm)));
+
+
 
 
   return (

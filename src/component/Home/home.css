@@ -4,9 +4,120 @@
     padding: 0;
 }
 
-.grad-dark{
-    height: 60vh;
-    width: 100%;
-    background-image: linear-gradient(to bottom, #050505, #141a20);
+p{
+    color: #8a8f98;
 }
 
+.container{
+    position: relative;
+}
+
+.grad-dark{
+    height: 72vh;
+    width: 100%;
+    background-image: linear-gradient(to bottom, #000000, #141a20);
+}
+
+.top-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 40vh;
+    margin: 0px auto;
+    padding: 50px;
+}
+
+.top-content-left{
+    width: 45%;
+    height: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.top-content-right{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 45%;
+    height: 100%;
+}
+.top-content-left img{
+   object-fit: cover;
+   width: 500px;
+}
+
+.btn{
+    padding: 14px 40px;
+    margin: 30px;
+    background-color: white;
+    border-radius: 2px;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+ }
+ 
+ .btn:hover{
+     background-color: rgb(165, 165, 165);
+ }
+
+ .middle-content{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 70%;
+    height: 300px;
+    background-color: #0f0f0f;
+    margin: auto;
+    top: -10vh;
+}
+
+ .middle-content-left{
+    padding: 20px;
+    color: white;
+    width: 45%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 20% 30%;
+    align-content: center;
+}
+
+/* .middle-content-left h2{
+    margin-top: 10px;
+}
+.middle-content-right h2{
+    margin-top: 10px;
+} */
+
+.middle-content::after{
+    position: absolute;
+    content: '';
+    background-color: #3c3c3c;
+    width: 1px;
+    height: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.middle-content-right{
+    padding: 20px;
+    color: white;
+    width: 45%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 20% 30%;
+    align-content: center;
+}
+
+.bottm-container{
+    position: relative;
+     background-color: #0d0d0d;
+     width: 100%;
+ 
+}

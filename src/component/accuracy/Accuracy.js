@@ -4,12 +4,15 @@ import React, {} from 'react';
 import './accuracy.css';
 import { RxTarget} from "react-icons/rx";
 
+import { setAccuracy } from '../../actions';
+import { useDispatch } from 'react-redux';
+
 const Accuracy = ({para,userInput}) => {
   const text=para.split('');
     const useInputarr=userInput.split('');
     let num=0;
 const cnt=()=>{
-  const len=text.map((s,i)=>{
+  text.map((s,i)=>{
     if(i<useInputarr.length){
       if(s!==useInputarr[i]){
          num++;
@@ -56,12 +59,9 @@ else{
   color="#ffffff";
 }
 
-const showdata=()=>{
-  if(cnt()<0){
-    return 0;
-  }
-  return cnt();
-}
+
+const sendAccuracy=useDispatch();
+sendAccuracy(setAccuracy(cnt()));
 
 
   return (

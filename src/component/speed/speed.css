@@ -105,7 +105,7 @@
       line-height: 1.2em;
     }
 
-    .needle{
+    /* .needle{
       position: absolute;
       background-color: rgb(0, 0, 0);
       left: 33.5px;
@@ -117,7 +117,7 @@
       clip-path: polygon(50% 0px, 14% 100px, 89% 100px);
       height: 29.5px;
       z-index: 15;
-    }
+    } */
 
     .dot{
       position: absolute;

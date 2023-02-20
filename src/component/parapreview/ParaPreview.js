@@ -1,24 +1,25 @@
-import React, { useEffect, useRef } from 'react'
+import React, {useRef } from 'react'
 import './parapreview.css';
 
-const ParaPreview = ({para,userInput}) => {
+const ParaPreview = ({para,userInput,textColor,textColor2,backgroundC}) => {
     const text=para.split('');
     const useInputarr=userInput.split('');
     
     let change=useRef(null);
 const changecolor=(i)=>{
   const span=change.current.children[i];
-  span.className="back-white";
+  span.className=backgroundC;
 }
 
 
 const changecolor2=(i)=>{
+  if(i-1>0){
   const span=change.current.children[i-1];
   span.className="";
+  }
 }
 
 const changecolor3=(i)=>{
-  console.log(i+1);
   if((i+1)<text.length){
   const span=change.current.children[i+1];
   span.className="";
@@ -36,7 +37,9 @@ const changecolor3=(i)=>{
         {
          text.map((s,i)=>{
             let color;
-            let background;
+
+            
+
             if(i<useInputarr.length){
               if(useInputarr.length<text.length){
                   changecolor(useInputarr.length);
@@ -44,10 +47,10 @@ const changecolor3=(i)=>{
                   changecolor3(useInputarr.length);
                   
               }
-                s===useInputarr[i]?color="#fff":color="#F36747";
+                s===useInputarr[i]?color=textColor:color=textColor2;
                 
             }
-             return <span key={i} style={{color:color}} className="">{s}</span>
+             return <span  key={i} style={{color:color}} className="">{s}</span>
          })
         }
     </div>
