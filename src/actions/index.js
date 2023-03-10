@@ -23,3 +23,31 @@ export const setAccuracy=(val)=>{
         Accuracy:val
     }
 }
+
+export const setUser =(val)=>{
+        return {
+        type:"SET_USER",
+        userStatus:val
+    }
+}
+
+export const setEmail= (val)=>{
+    return{
+        type:"SET_EMAIL",
+        userEmail:val
+    }
+}
+
+export const setRow=(val)=>{
+    return{
+        type:"SET_ROW",
+        UserProgressROW:val
+    }
+}
+
+export const setCol=(val)=>{
+    return{
+        type:"SET_COL",
+        UserProgressCOL:val
+    }
+}

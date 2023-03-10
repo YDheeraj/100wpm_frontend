@@ -74,11 +74,11 @@ const onFinish=(str)=>{
   }
 }
 
-
+console.log(data);
   return (
     <>
-      <div onClick={()=>{inputref.current.focus()}}   className='grad-dark main-container'>
-        <div className='typingTest-Container'>
+      <div onClick={()=>{inputref.current.focus()}}   className='banner'>
+        <div className='typingTest-Container' >
      <div className='paraPreview-container'> <ParaPreview para={para} userInput={input} textColor={"#fff"} textColor2={"#F36747"} backgroundC={"back-white"}></ParaPreview></div>
      <div className='stats-typingtest'>
      <Speed symbol={symbol} start={data[0]}></Speed>
@@ -89,7 +89,7 @@ const onFinish=(str)=>{
     </div>
      </div>
     </div>
-    <input ref={inputref}  style={{position:"absolute",zIndex:"-5"}} value={input} onChange={handleInput} autoFocus  readOnly={finished}></input>
+    <input className='para-input' ref={inputref} value={input} onChange={handleInput} autoFocus  readOnly={finished}></input>
     </div >
     <div>
     <Footer></Footer>
@@ -113,17 +113,14 @@ export const Typingtest=()=>{
   
   return (
     <>
-    <div className='grad-dark main-container1'>
-
-    <div className='background-container'>
-      <div className='inner-container'>
-    <h1 style={{color:"white",marginBottom:"30px"}}>Typing test</h1>
-    <p style={{color:"white",fontSize:"20px",fontWeight:"500"}}>Typing test
-
-You can test your typing speed in wpm on English and impress your friends or employers with your own typing certificate. Test your typing speed, and find out how fast you type, and then improve your typing speed if necessary.</p>
-    <button className='btn' onClick={gotoStartTypingtest}>Start Typing</button>
-    </div>
-    </div>
+    <div className='banner'>
+    <div className='content'>
+          <h1>LEARN TYPING</h1>
+          <p>You can test your typing speed in wpm on English and impress your friends or employers with your own typing certificate. Test your typing speed, and find out how fast you type, and then improve your typing speed if necessary.</p>
+          <div>
+            <button onClick={gotoStartTypingtest} type='button' className='btn'><span></span>START TYPING</button>
+          </div>
+         </div>
     </div>
     <Footer></Footer>
     </>
@@ -139,6 +136,7 @@ export const StartTyping=()=>{
 
   return (
     <>
+    <div className='banner'>
     <div className='startType-main-box'>
       <div className='startType-logo-box-outer'>
         <div className='startType-logo'>
@@ -147,8 +145,9 @@ export const StartTyping=()=>{
       </div>
       <div className='bottom-container'>
       <h1>Please be prepared. Good luck! </h1>
-      <button className='btn' onClick={startType}>Start Typing Now</button>
+      <button className='btn' onClick={startType}><span></span> Start Typing Now</button>
       </div>
+    </div>
     </div>
     </>
   )

@@ -25,4 +25,41 @@ export const setAccuracy=(state=Accuracy,action)=>{
     }
 }
 
+var userStatus=null;
+export const setUser = (state=userStatus,action)=>{
+    switch(action.type){
+        case "SET_USER":
+             return userStatus = action.userStatus;
+        default: return userStatus;
+    }
+}
+
+var userEmail="";
+export const setEmail=(state=userEmail,action)=>{
+    switch(action.type){
+        case "SET_EMAIL":
+            return userEmail=action.userEmail
+            default:return userEmail
+    }
+}
+
+
+export const setRow = (state=0,action)=>{
+    switch(action.type){
+        case "SET_ROW":
+         return action.UserProgressROW
+         default:return state;
+    }
+}
+
+
+export const setCol = (state=0,action)=>{
+    switch(action.type){
+        case "SET_COL":
+         return action.UserProgressCOL
+         default:return state;
+    }
+}
+
+
 

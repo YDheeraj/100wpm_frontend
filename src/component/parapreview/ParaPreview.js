@@ -37,9 +37,6 @@ const changecolor3=(i)=>{
         {
          text.map((s,i)=>{
             let color;
-
-            
-
             if(i<useInputarr.length){
               if(useInputarr.length<text.length){
                   changecolor(useInputarr.length);

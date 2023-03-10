@@ -1,42 +1,101 @@
+import React, { useEffect, useState } from "react";
 
-import React from 'react'
+import "./lessonResult.css";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setCol,setRow } from "../../../actions";
+import TutorLessons from "../TutorLessons";
 
-import store from '../../../store'
-import './lessonResult.css'
-import {GiOnTarget} from "react-icons/gi"
-import {SlSpeedometer} from "react-icons/sl"
 
-
+const { chapters, lessons, lessonContent } =TutorLessons();///---------API DATA 
 const LessonResult = () => {
-
-    const state=store.getState();
-    const data=Object.values(state);
+  const wpm = useSelector((state) => state.setWpm);
+ const typos= useSelector((state) => state.setAccuracy);
+  const [row,updateRow]=useState(useSelector((state)=>state.setRow))
+  const [col,updateCol]=useState(parseInt(useSelector((state)=>state.setCol)));
+  
+  const dispatch = useDispatch();
+  
+  const navigate= useNavigate();
   
 
-   console.log(data);
+  const setRowColatBackend= async (row,col) => {
+    console.log("setRowColatBackend",col);
+    try {
+      const response = await fetch("/update-row-col", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ row, col}),
+      });
+      const data = await response.json();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+  // useEffect(() => {
+  //   setRowColatBackend();
+  // }, []);
+
+
+  const tryagain=()=>{
+    navigate('/typingTutor');
+  }
+
+  console.log(lessonContent);
+
+    const gotonext = async () => {
+       if(col===lessonContent[row].length-1){
+           const newRow=row+1;
+           const newCol=0;
+           await setRowColatBackend(newRow,newCol);
+           dispatch(setCol(newCol));
+           dispatch(setRow(newRow));
+           console.log(newRow);
+       }else{
+      const newCol = col + 1;
+      await setRowColatBackend(row, newCol);
+      dispatch(setCol(newCol));
+       }
+  
+      // Navigate to next page
+      navigate('/typingTutor');
+    }
+  
 
   return (
     <>
-    <div className='grad-dark'>
-    <div class="speed-accuracy">
-  <div class="speed">
-    <div className='speed-head'>
-    <SlSpeedometer  style={{width:"20px",height:"20px",paddingBottom:"10px"}}></SlSpeedometer>
-    <p class="speed-label">SPEED</p>
-    </div>
-    <p class="speed-value">{data[1]}<span>WPM</span></p>
-  </div>
-  <div class="accuracy">
-  <div className='accuracy-head'>
-    <GiOnTarget  style={{width:"20px",height:"20px",paddingBottom:"10px"}}></GiOnTarget>
-    <p class="accuracy-label">ACCURACY</p>
-    </div>
-    <p class="accuracy-value">{data[2]}<span>%</span></p><hr style={{color:"black"}}></hr>
-  </div>
-</div>
-    </div>
-    </>
-  )
-}
+      <div className="banner">
+        <div className="content">
+              <div className="lessonResult">
+                <div className="lessonResult-head">
+                    {
 
-export default LessonResult
+                      typos<3?wpm>20?<h2>Exercise Finished</h2>:<h2>Opps ! need more practicde</h2>:<h2>Opps ! make less than 3 mistake</h2>
+                    }
+                </div>
+                <div className="lessonResult-stats">
+                  <div className="wpm box">
+                    <h3>{wpm}</h3><span>WPM</span>
+                  </div>
+                  <div className="typos box">
+                      <h3>{typos}</h3><span>TYPOS</span>
+                  </div>
+                </div>
+                <div className="lessonResult-next">
+                   <button className="btn" type="button" onClick={tryagain}><span></span>TRY AGAIN</button>
+                   {
+                    typos<2 && wpm>20?<button onClick={gotonext} className="btn"><span></span>NEXT</button>:null
+                   }
+                </div>
+              </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default LessonResult;

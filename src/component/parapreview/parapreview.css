@@ -1,5 +1,15 @@
 
 
+.para-container{
+    width: calc(100% - 155px);
+    overflow: hidden;
+    float: left;
+    margin-right: 30px;
+    font-size: 21px;
+    line-height: 32px;
+}
+
+
 .back-white{
     background-color: white;
     color: black;

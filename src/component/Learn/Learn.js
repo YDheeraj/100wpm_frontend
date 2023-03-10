@@ -27,7 +27,7 @@ const Learn = () => {
       <div className='learn-contents box2'>
         <h2>Home row position</h2>
         <p>Curve your fingers a little and put them on the ASDF and JKL; keys which are located in the middle row of the letter keys. This row is called HOME ROW because you always start from these keys and always return to them.</p>
-        <p class="cut-bottom">F and J keys under your index fingers should have a raised line on them to aide in finding these keys without looking.</p>
+        <p >F and J keys under your index fingers should have a raised line on them to aide in finding these keys without looking.</p>
       </div>
       <div className='learn-contents box3'>
       <p>The color-coded keyboard under lesson input field will help you to understand which finger should press each key.</p>

@@ -1,10 +1,10 @@
-import { truefalse,setAccuracy,setWpm } from "./typingtestReducer";
+import { truefalse,setAccuracy,setWpm,setUser,setEmail,setRow,setCol} from "./typingtestReducer";
 
 
 import {combineReducers} from "redux";
 
 const rootReducer=combineReducers({
-    truefalse,setWpm,setAccuracy
+    truefalse,setWpm,setAccuracy,setUser,setEmail,setRow,setCol
 
 })
 

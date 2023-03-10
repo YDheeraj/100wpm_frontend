@@ -1,120 +1,4 @@
 
-.main-container1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
-.inner-container{
-    width: 100%;
-    position: relative;
-    background: transparent;
-    height: 100%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.background-container{
-    position: absolute;
-    margin: 10px auto;
-    padding: 15px;
-    width: 50vw;
-    border-radius: 10px;
-    height: 40vh;
-    /* background-image:linear-gradient(rgb(0, 0, 0),#414141);; */
-}
-
-
-
-
-.grad-dark{
-    height: 72vh;
-    width: 100%;
-    /* background-image: linear-gradient(#414141,rgb(0, 0, 0)); */
-    background-image: linear-gradient(to bottom, #000000, #141a20);
-    /* background-color: #050505; */
-}
-
-.main-container{
-    padding-top: 40px;
-}
-
-.typingTest-Container{
-    background-color: rgb(34, 34, 34);
-    border-radius: 10px;
-    padding: 10px;
-    margin: 0 auto;
-    display: flex;
-    width: 780px;
-}
-
-.paraPreview-container{
-    background-color: rgb(34, 34, 34);
-    width: 80%;
-    color: #5c5c5c;
-    font-size: 22px;
-    line-height: 1.375;
-    padding: 10px;
-
-}
-
-.stats-typingtest{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-size: 12px;
-    font-weight: 700px;
-    margin: 10px;
-    height: 227px;
-    color: #767676;
-    background: transparent;
-}
-
-.restart-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 0px;
-    color: #767676;;;
-    width: 105px;
-    padding-top: 10px;
-}
-
-.restart-btn{
-font-size: 17px;
-font-weight: 700px;
-font-weight: 700;
-background: transparent;
-color: #767676;;
-border: none;
-/* padding: 1px; */
-padding: 0px;
-text-transform: uppercase;
-}
-
-.btn{
-   padding: 14px 40px;
-   margin: 30px;
-   background-color: white;
-   border-radius: 2px;
-   color: black;
-   font-weight: bold;
-   font-size: 16px;
-   border: none;
-}
-
-.btn:hover{
-    background-color: rgb(165, 165, 165);
-}
-
- /* //////////////////////////-------------StartTyping-Text design----------/////////////////////////////// */
-
 .startType-main-box{
     width: 80vw;
     height: 60vh;
@@ -124,6 +8,7 @@ text-transform: uppercase;
     border-radius: 25px;
     border: 5px solid rgb(99, 99, 99);
     text-align: center;
+    top: 25%;
 
 }
 
@@ -166,4 +51,73 @@ top: 50%;
 left: 50%;
 transform: translate(-50%);
 
+}
+
+/* ------------------------typing-test------------------------- */
+
+.typingTest-Container{
+    background-color: rgb(34, 34, 34);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 auto;
+    display: flex;
+    width: 780px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.paraPreview-container{
+    background-color: rgb(34, 34, 34);
+    width: 80%;
+    color: #5c5c5c;
+    font-size: 22px;
+    line-height: 1.375;
+    padding: 10px;
+
+}
+
+.paraPreview-container span{
+    font-size:"1.6rem";
+}
+
+.stats-typingtest{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 700px;
+    margin: 10px;
+    height: 227px;
+    color: #767676;
+    background: transparent;
+}
+
+.restart-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 0px;
+    color: #767676;;;
+    width: 105px;
+    padding-top: 10px;
+}
+
+.restart-btn{
+font-size: 17px;
+font-weight: 700px;
+font-weight: 700;
+background: transparent;
+color: #767676;;
+border: none;
+padding: 0px;
+text-transform: uppercase;
+}
+
+.para-input{
+    position: absolute;
+    z-index: -5;
+    top: -50%;
+    left: 50%;
 }

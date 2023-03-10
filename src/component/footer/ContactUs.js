@@ -31,7 +31,7 @@ const  ContactUs=()=> {
       <h2 className="contact-header">Contact Us</h2>
       <label className="contact-label">
         Name:
-        <input type="text" value={name} onChange={handleNameChange} className="contact-input" />
+        <input type="text" value={name} autoComplete="off" onChange={handleNameChange} className="contact-input" />
       </label>
       <br />
       <label className="contact-label">

@@ -12,6 +12,7 @@ import Registration from './component/header/Registration';
 import Login from './component/header/Login';
 import AboutUs from './component/footer/AboutUs';
 import ContactUs from './component/footer/ContactUs';
+import Logout from './component/header/Logout';
 function App() {
   return (
   <>
@@ -26,10 +27,11 @@ function App() {
       <Route path='/Typingetst/StartTyping' element={<StartTyping></StartTyping>}></Route>
       <Route path='/TestResult' element={<TestResult></TestResult>}></Route>
       <Route path='/LessonResult' element={<LessonResult></LessonResult>}></Route>
-      <Route path='/Registration' element={<Registration></Registration>}></Route>
+      <Route path='/registration' element={<Registration></Registration>}></Route>
       <Route path='/Login' element={<Login></Login>}></Route>
       <Route path='/AboutUs' element={<AboutUs></AboutUs>}></Route>
       <Route path='/ContactUs' element={<ContactUs></ContactUs>}></Route>
+      <Route path='/logout' element={<Logout></Logout>}></Route>
       <Route path='*' element={<Error></Error>}></Route>
       </Route>
     </Routes>
